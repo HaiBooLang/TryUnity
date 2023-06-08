@@ -10,24 +10,29 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
 
+    Rigidbody2D rigid_body;     // 刚体组件
+
     // Start is called before the first frame update
     void Start()
     {
-
+        rigid_body = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");   // 控制水平方向移动 A:-1  D: 1
-        float moveY = Input.GetAxisRaw("Vertical");     // 控制垂直方向移动 W:-1  S: 1
+        float move_X = Input.GetAxisRaw("Horizontal");   // 控制水平方向移动 A:-1  D: 1
+        float move_Y = Input.GetAxisRaw("Vertical");     // 控制垂直方向移动 W:-1  S: 1
 
-        Vector2 position = transform.position;          // 人物当前位置
+        // 人物移动
+        // 通过移动刚体位置而非人物位置解决人物与其他物体碰撞时抖动问题
+        //=========================================================================================================
+        Vector2 position = rigid_body.position;          // 人物当前位置
         
         // 更新人物位置
-        position.x += moveX * speed * Time.deltaTime;   
-        position.y += moveY * speed * Time.deltaTime;
+        position.x += move_X * speed * Time.deltaTime;   
+        position.y += move_Y * speed * Time.deltaTime;
 
-        transform.position = position;
+        rigid_body.position = position;
     }
 }
