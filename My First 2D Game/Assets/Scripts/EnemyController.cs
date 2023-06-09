@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
     private bool isFixed;                   // 是否被修复
 
     public ParticleSystem brokenEffect;
+    public AudioClip fixedClip;
 
     private Animator animator;
 
@@ -86,5 +87,6 @@ public class EnemyController : MonoBehaviour
         }
         rigidBody.simulated = false;    // 禁用物理
         animator.SetTrigger("fixed");     // 播放被修复的动画
+        AudioManager.instance.AudioPlay(fixedClip);
     }
 }

@@ -9,6 +9,8 @@ public class NewBehaviourScript : MonoBehaviour
 
     public ParticleSystem collectEffect;        // 拾取特效
 
+    public AudioClip collectClip;               // 拾取音效
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,7 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 playerController.ChangeHealth(1);
                 Instantiate(collectEffect, transform.position, Quaternion.identity);        // 生成特效
+                AudioManager.instance.AudioPlay(collectClip);                               // 播放音效
                 Destroy(this.gameObject);
             }
         }

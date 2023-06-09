@@ -9,6 +9,8 @@ public class BulletController : MonoBehaviour
 
     Rigidbody2D rigidBody;
 
+    public AudioClip hitClip;
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -47,7 +49,7 @@ public class BulletController : MonoBehaviour
         {
             enemyController.Fixed();        // –ﬁ∏¥µ–»À
         }
-
+        AudioManager.instance.AudioPlay(hitClip);
         Destroy(this.gameObject);
     }
 }

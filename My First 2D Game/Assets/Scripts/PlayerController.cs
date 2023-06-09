@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bulletPrefab;     // 子弹
 
+    // 玩家音效
+
+    public AudioClip hitClip;
+    public AudioClip launchClip;
+
     // 玩家方向
     private Vector2 lookDirection = new Vector2(1, 0);     // 默认看向右方
 
@@ -81,7 +86,8 @@ public class PlayerController : MonoBehaviour
         //=========================================================================================================
         if (Input.GetKeyDown(KeyCode.J))
         {
-            animator.SetTrigger("Launch");      // 播放动画
+            AudioManager.instance.AudioPlay(launchClip);    // 攻击音效
+            animator.SetTrigger("Launch");                  // 播放动画
             GameObject bullet = Instantiate(bulletPrefab, rigidBody.position + Vector2.up * 0.5f, Quaternion.identity);
             BulletController bulletController = bullet.GetComponent<BulletController>();
             if (bulletController != null)
@@ -106,6 +112,7 @@ public class PlayerController : MonoBehaviour
             }
             isInvincible = true;
             invincibleTimer = invincibleTime;
+            AudioManager.instance.AudioPlay(hitClip);
             animator.SetTrigger("Hit");
         }
 
