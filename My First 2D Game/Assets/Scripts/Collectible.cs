@@ -6,6 +6,9 @@ using UnityEngine;
 /// </summary>
 public class NewBehaviourScript : MonoBehaviour
 {
+
+    public ParticleSystem collectEffect;        // 拾取特效
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,7 @@ public class NewBehaviourScript : MonoBehaviour
             if (playerController.MyCurrentHealth < playerController.MyMaxHealth)
             {
                 playerController.ChangeHealth(1);
+                Instantiate(collectEffect, transform.position, Quaternion.identity);        // 生成特效
                 Destroy(this.gameObject);
             }
         }
