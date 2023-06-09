@@ -27,8 +27,10 @@ public class PlayerController : MonoBehaviour
     public int MyMaxHealth { get { return maxHealth; } }
     public int MyCurrentHealth { get { return currentHealth; } }
 
+    public GameObject bulletPrefab;     // 子弹
+
     // 玩家方向
-    private Vector2 lookDirection = new Vector2 (1, 0);     // 默认看向右方
+    private Vector2 lookDirection = new Vector2(1, 0);     // 默认看向右方
 
     // Start is called before the first frame update
     void Start()
@@ -45,13 +47,13 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");   // 控制水平方向移动 A:-1  D: 1
         float moveY = Input.GetAxisRaw("Vertical");     // 控制垂直方向移动 W:-1  S: 1
 
-        Vector2 moveVector = new Vector2 (moveX, moveY);
-        if(moveVector.x!=0 || moveVector.y != 0)
+        Vector2 moveVector = new Vector2(moveX, moveY);
+        if (moveVector.x != 0 || moveVector.y != 0)
         {
             lookDirection = moveVector;
         }
 
-        animator.SetFloat("Look X",lookDirection.x);
+        animator.SetFloat("Look X", lookDirection.x);
         animator.SetFloat("Look Y", lookDirection.y);
         animator.SetFloat("Speed", moveVector.magnitude);
 
@@ -71,6 +73,19 @@ public class PlayerController : MonoBehaviour
             if (invincibleTimer < 0)
             {
                 isInvincible = false;
+            }
+        }
+
+        // 按下 J 键，进行攻击
+        //=========================================================================================================
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            animator.SetTrigger("Launch");      // 播放动画
+            GameObject bullet = Instantiate(bulletPrefab, rigidBody.position + Vector2.up * 0.5f, Quaternion.identity);
+            BulletController bulletController = bullet.GetComponent<BulletController>();
+            if (bulletController != null)
+            {
+                bulletController.Move(lookDirection, 300);
             }
         }
     }

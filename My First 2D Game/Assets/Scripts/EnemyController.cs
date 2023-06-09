@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
 /// <summary>
@@ -19,11 +20,15 @@ public class EnemyController : MonoBehaviour
 
     private Vector2 moveDirection;          // 移动方向
 
+    private bool isFixed;
+
     private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        isFixed = false;
+
         rigidBody = GetComponent<Rigidbody2D>();
 
         // 如果是垂直移动，移动方向就向上，否则移动方向向右
@@ -37,20 +42,24 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        changeTimer -= Time.deltaTime;
-        if (changeTimer < 0)
+        if (isFixed) { return; }        // 如果被修复，停止执行以下代码
+
         {
-            moveDirection *= -1;
-            changeTimer = changeDirectionTime;
+            changeTimer -= Time.deltaTime;
+            if (changeTimer < 0)
+            {
+                moveDirection *= -1;
+                changeTimer = changeDirectionTime;
+            }
+
+            Vector2 position = rigidBody.position;
+            position.x += moveDirection.x * speed * Time.deltaTime;
+            position.y += moveDirection.y * speed * Time.deltaTime;
+            rigidBody.MovePosition(position);
+
+            animator.SetFloat("moveX", moveDirection.x);
+            animator.SetFloat("moveY", moveDirection.y);
         }
-
-        Vector2 position = rigidBody.position;
-        position.x += moveDirection.x * speed * Time.deltaTime;
-        position.y += moveDirection.y * speed * Time.deltaTime;
-        rigidBody.MovePosition(position);
-
-        animator.SetFloat("moveX", moveDirection.x);
-        animator.SetFloat("moveY", moveDirection.y);
     }
 
     /// <summary>
@@ -64,5 +73,12 @@ public class EnemyController : MonoBehaviour
         {
             playerController.ChangeHealth(-1);
         }
+    }
+
+    public void Fixed()
+    {
+        isFixed = true;
+        rigidBody.simulated = false;    // 禁用物理
+        animator.SetTrigger("fixed");     // 播放被修复的动画
     }
 }

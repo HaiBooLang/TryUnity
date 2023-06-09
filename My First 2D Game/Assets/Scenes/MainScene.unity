@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 351197990}
   - component: {fileID: 351197992}
   - component: {fileID: 351197991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12993,7 +12993,7 @@ GameObject:
   - component: {fileID: 691373770}
   - component: {fileID: 691373771}
   - component: {fileID: 691373772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ruby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13012,7 +13012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0fda3d138e7da46a77d9fc720a7937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
+  bulletPrefab: {fileID: 3748228296996064600, guid: 4d433d7c01b17d54cbded1a684b7a12f, type: 3}
 --- !u!212 &691373768
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15672,7 +15673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1091163232858729316, guid: 06905caa214606d4e82f581499d7830b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.02
+      value: -9.844
       objectReference: {fileID: 0}
     - target: {fileID: 1091163232858729316, guid: 06905caa214606d4e82f581499d7830b, type: 3}
       propertyPath: m_LocalPosition.y
