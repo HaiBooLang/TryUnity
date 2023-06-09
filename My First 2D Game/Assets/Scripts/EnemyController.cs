@@ -8,9 +8,9 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 /// </summary>
 public class EnemyController : MonoBehaviour
 {
-    public float speed;                // 速度
+    public float speed;                     // 速度
 
-    public float changeDirectionTime;  // 改变方向时间间隔
+    public float changeDirectionTime;       // 改变方向时间间隔
 
     private float changeTimer;              // 改变方向时间计时器
 
@@ -20,7 +20,9 @@ public class EnemyController : MonoBehaviour
 
     private Vector2 moveDirection;          // 移动方向
 
-    private bool isFixed;
+    private bool isFixed;                   // 是否被修复
+
+    public ParticleSystem brokenEffect;
 
     private Animator animator;
 
@@ -78,6 +80,10 @@ public class EnemyController : MonoBehaviour
     public void Fixed()
     {
         isFixed = true;
+        if(brokenEffect.isPlaying)
+        {
+            brokenEffect.Stop();
+        }
         rigidBody.simulated = false;    // 禁用物理
         animator.SetTrigger("fixed");     // 播放被修复的动画
     }
