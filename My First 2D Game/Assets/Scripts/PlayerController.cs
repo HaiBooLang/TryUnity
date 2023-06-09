@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float move_X = Input.GetAxisRaw("Horizontal");   // 控制水平方向移动 A:-1  D: 1
         float move_Y = Input.GetAxisRaw("Vertical");     // 控制垂直方向移动 W:-1  S: 1
