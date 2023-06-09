@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 /// <summary>
 /// 敌人控制相关
 /// </summary>
 public class EnemyController : MonoBehaviour
 {
-    public float speed = 5f;                // 速度
+    public float speed;                // 速度
 
-    public float changeDirectionTime = 2f;  // 改变方向时间间隔
+    public float changeDirectionTime;  // 改变方向时间间隔
 
     private float changeTimer;              // 改变方向时间计时器
 
@@ -18,6 +19,8 @@ public class EnemyController : MonoBehaviour
 
     private Vector2 moveDirection;          // 移动方向
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,8 @@ public class EnemyController : MonoBehaviour
 
         // 如果是垂直移动，移动方向就向上，否则移动方向向右
         moveDirection = isVertical ? Vector2.up : Vector2.right;
+
+        animator = GetComponent<Animator>();
 
         changeTimer = changeDirectionTime;
     }
@@ -43,6 +48,9 @@ public class EnemyController : MonoBehaviour
         position.x += moveDirection.x * speed * Time.deltaTime;
         position.y += moveDirection.y * speed * Time.deltaTime;
         rigidBody.MovePosition(position);
+
+        animator.SetFloat("moveX", moveDirection.x);
+        animator.SetFloat("moveY", moveDirection.y);
     }
 
     /// <summary>
