@@ -95,7 +95,19 @@ public class PlayerController : MonoBehaviour
                 bulletController.Move(lookDirection, 300);
             }
         }
-    }
+        // 按下 E 键，与 NPC 交互
+        if(Input.GetKeyDown(KeyCode.E)) {
+            RaycastHit2D hit = Physics2D.Raycast(rigidBody.position, lookDirection, 2f,LayerMask.GetMask("NPC"));
+            if(hit.collider!=null)
+            {
+                NPCmanager npc = hit.collider.GetComponent<NPCmanager>();
+                if (npc != null)
+                {
+                    npc.ShowDialog();
+                }
+            }
+        }
+    } 
 
     /// <summary>
     /// 改变玩家生命值
