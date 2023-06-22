@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Clock : MonoBehaviour
@@ -7,6 +8,7 @@ public class Clock : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log(DateTime.Now);
         hoursPivot.localRotation = Quaternion.Euler(0, 0, -30);
     }
 }
