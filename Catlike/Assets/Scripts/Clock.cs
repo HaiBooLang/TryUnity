@@ -8,7 +8,7 @@ public class Clock : MonoBehaviour
     [SerializeField]
     Transform hoursPivot, minutesPivot, secondsPivot;
 
-    private void Awake()
+    private void Update()
     {
         DateTime time = DateTime.Now;
         hoursPivot.localRotation = Quaternion.Euler(0f, 0f, hoursToDegrees * time.Hour);
