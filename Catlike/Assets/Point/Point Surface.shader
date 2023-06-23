@@ -17,6 +17,7 @@ Shader"Graph/Point Surface" {
 		float _Smoothness;
 		void ConfigureSurface(Input input, inout SurfaceOutputStandard surface)
 		{
+			surface.Albedo = input.worldPos * 0.5 + 0.5;
 			surface.Smoothness = _Smoothness;
 }
 
