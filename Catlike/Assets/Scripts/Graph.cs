@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Graph : MonoBehaviour
 {
@@ -8,10 +9,14 @@ public class Graph : MonoBehaviour
 
     void Awake()
     {
-        for(int i = 0; i <10; i++)
+        Vector3 position = Vector3.zero;
+        var scale = Vector3.one / 5f;
+        for (int i = 0; i < 10; i++)
         {
             Transform point = Instantiate(pointPrefab);
-            point.localPosition = Vector3.right * i;
+            position.x = (i + 0.5f) / 5f - 1f;
+            point.localPosition = position;
+            point.localScale = scale;
         }
     }
 }
