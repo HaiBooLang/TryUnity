@@ -35,23 +35,12 @@ public class NewGraph : MonoBehaviour
     void Update()
     {
         float time = Time.time;
+        FunctionLibrary.Function f = FunctionLibrary.GetFunction(function);
         for (int i = 0; i < points.Length; i++)
         {
             Transform point = points[i];
             Vector3 position = point.localPosition;
-            switch (function)
-            {
-                case 0:
-                    position.y = FunctionLibrary.Wave(position.x, time);
-                    break;
-                case 1:
-                    position.y = FunctionLibrary.MultiWave(position.x, time);
-                    break;
-                case 2:
-                    position.y = FunctionLibrary.Ripple(position.x, time);
-                    break;
-                default: break;
-            }
+            position.y = f(position.x, time);
             point.localPosition = position;
         }
     }

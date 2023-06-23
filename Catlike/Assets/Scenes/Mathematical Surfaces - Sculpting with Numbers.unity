@@ -269,28 +269,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1918291294}
-  - component: {fileID: 1918291293}
+  - component: {fileID: 1918291295}
   m_Layer: 0
-  m_Name: Graph
+  m_Name: NewGraph
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1918291293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918291292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 935400f7b2cb966408273a3e7bd9bfb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointPrefab: {fileID: 7750663195260721009, guid: ecbfe786a6270c64ea2b229433072f74, type: 3}
-  resolution: 100
 --- !u!4 &1918291294
 Transform:
   m_ObjectHideFlags: 0
@@ -306,6 +292,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1918291295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918291292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f929814cd825a3046ad6cd7973d4d136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointPrefab: {fileID: 7750663195260721009, guid: ecbfe786a6270c64ea2b229433072f74, type: 3}
+  resolution: 100
+  function: 2
 --- !u!1 &2048474965
 GameObject:
   m_ObjectHideFlags: 0
