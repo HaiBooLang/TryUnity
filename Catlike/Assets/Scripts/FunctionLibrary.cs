@@ -62,11 +62,12 @@ public static class FunctionLibrary
 
     public static Vector3 Torus(float u, float v, float t)
     {
-        float r = 1f;
-        float s = 0.5f + r * Cos(0.5f * PI * v);
+        float r1 = 0.75f;
+        float r2 = 0.25f;
+        float s = r1 + r2 * Cos(PI * v);
         Vector3 p;
         p.x = s * Sin(PI * u);
-        p.y = r * Sin(0.5f * PI * v);
+        p.y = r2 * Sin(PI * v);
         p.z = s * Cos(PI * u);
         return p;
     }
