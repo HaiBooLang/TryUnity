@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 /// <summary>
 /// 敌人控制相关
 /// </summary>
