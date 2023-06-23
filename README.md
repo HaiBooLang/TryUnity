@@ -14,6 +14,16 @@
 
 ![image-20230623113527449](./image/image-20230623113527449.png)
 
+![image-20230623152347011](./image/image-20230623152347011.png)
+
+![image-20230623152412098](./image/image-20230623152412098.png)
+
+![image-20230623152436928](./image/image-20230623152436928.png)
+
+![image-20230623152456296](./image/image-20230623152456296.png)
+
+![image-20230623152512449](./image/image-20230623152512449.png)
+
 ## 学习资源
 
 - [Catlike]([Unity C# and Shader Tutorials (catlikecoding.com)](https://catlikecoding.com/unity/tutorials/))
