@@ -13,7 +13,12 @@ public class NewGraph : MonoBehaviour
     [SerializeField]
     FunctionLibrary.FunctionName function;
 
+    [SerializeField, Min(0f)]
+    float functionDuration = 1f;
+
     Transform[] points;
+
+    float duration;
 
     void Awake()
     {
@@ -32,6 +37,18 @@ public class NewGraph : MonoBehaviour
 
     void Update()
     {
+        duration += Time.deltaTime;
+        if (duration >= functionDuration)
+        {
+            duration -= functionDuration;
+            function = FunctionLibrary.GetNextFunctionName(function);
+        }
+
+        UpdateFunction();
+    }
+
+    void UpdateFunction()
+    {
         float time = Time.time;
         FunctionLibrary.Function f = FunctionLibrary.GetFunction(function);
         float step = 2f / resolution;
@@ -48,4 +65,5 @@ public class NewGraph : MonoBehaviour
             points[i].localPosition = f(u, v, time);
         }
     }
+
 }
