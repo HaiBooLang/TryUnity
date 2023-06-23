@@ -278,6 +278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 573244309}
+  displayMode: 1
+  sampleDuration: 1.04
 --- !u!1 &713492180
 GameObject:
   m_ObjectHideFlags: 0
