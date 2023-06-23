@@ -19,9 +19,7 @@ Shader"Graph/Point Surface" {
 		{
 			surface.Albedo = input.worldPos * 0.5 + 0.5;
 			surface.Smoothness = _Smoothness;
-}
-
-
+		}
 		ENDCG
 	}
 
