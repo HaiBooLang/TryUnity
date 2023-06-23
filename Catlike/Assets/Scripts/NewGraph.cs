@@ -6,9 +6,12 @@ public class NewGraph : MonoBehaviour
 
     [SerializeField]
     Transform pointPrefab;
-    
-    [SerializeField, Range(10,100)]
+
+    [SerializeField, Range(10, 100)]
     int resolution = 10;
+
+    [SerializeField, Range(0, 1)]
+    int function;
 
     Transform[] points;
 
@@ -17,7 +20,7 @@ public class NewGraph : MonoBehaviour
         float step = 2f / resolution;
         Vector3 position = Vector3.zero;
         var scale = Vector3.one * step;
-        
+
         points = new Transform[resolution];
         for (int i = 0; i < points.Length; i++)
         {
@@ -32,10 +35,18 @@ public class NewGraph : MonoBehaviour
     void Update()
     {
         float time = Time.time;
-        for (int i = 0; i < points.Length; i++) {
+        for (int i = 0; i < points.Length; i++)
+        {
             Transform point = points[i];
             Vector3 position = point.localPosition;
-            position.y = FunctionLibrary.MultiWave(position.x, time);
+            if (function == 0)
+            {
+                position.y = FunctionLibrary.Wave(position.x, time);
+            }
+            else
+            {
+                position.y = FunctionLibrary.MultiWave(position.x, time);
+            }
             point.localPosition = position;
         }
     }
