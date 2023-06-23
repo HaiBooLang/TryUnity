@@ -40,7 +40,7 @@ public class NewGraph : MonoBehaviour
         {
             Transform point = points[i];
             Vector3 position = point.localPosition;
-            position.y = f(position.x, time);
+            position.y = f(position.x, position.z, time);
             point.localPosition = position;
         }
     }
