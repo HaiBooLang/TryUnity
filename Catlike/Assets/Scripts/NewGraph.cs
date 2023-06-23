@@ -10,7 +10,7 @@ public class NewGraph : MonoBehaviour
     [SerializeField, Range(10, 100)]
     int resolution = 10;
 
-    [SerializeField, Range(0, 1)]
+    [SerializeField, Range(0, 2)]
     int function;
 
     Transform[] points;
@@ -39,13 +39,18 @@ public class NewGraph : MonoBehaviour
         {
             Transform point = points[i];
             Vector3 position = point.localPosition;
-            if (function == 0)
+            switch (function)
             {
-                position.y = FunctionLibrary.Wave(position.x, time);
-            }
-            else
-            {
-                position.y = FunctionLibrary.MultiWave(position.x, time);
+                case 0:
+                    position.y = FunctionLibrary.Wave(position.x, time);
+                    break;
+                case 1:
+                    position.y = FunctionLibrary.MultiWave(position.x, time);
+                    break;
+                case 2:
+                    position.y = FunctionLibrary.Ripple(position.x, time);
+                    break;
+                default: break;
             }
             point.localPosition = position;
         }
