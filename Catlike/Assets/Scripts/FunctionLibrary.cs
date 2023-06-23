@@ -50,11 +50,12 @@ public static class FunctionLibrary
 
     public static Vector3 Sphere(float u, float v, float t)
     {
-        float r = Cos(0.5f * PI * v);
+        float r = 0.9f + 0.1f * Sin(4f * PI * u * t);
+        float s = r * Cos(0.5f * PI * v);
         Vector3 p;
-        p.x = r * Sin(PI * u);
-        p.y = Sin(PI * 0.5f * v);
-        p.z = r * Cos(PI * u);
+        p.x = s * Sin(PI * u);
+        p.y = r * Sin(0.5f * PI * v);
+        p.z = s * Cos(PI * u);
         return p;
     }
 }
