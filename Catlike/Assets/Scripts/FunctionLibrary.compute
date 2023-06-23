@@ -1,0 +1,5 @@
+#pragma kernel FunctionKernel
+
+void FunctionKernel()
+{
+}
