@@ -7,11 +7,13 @@ public static class FunctionLibrary
 
     public delegate float Function(float x, float t);
 
+    public enum FunctionName { Wave, MultiWave, Ripple }
+
     static Function[] functions = { Wave, MultiWave, Ripple };
 
-    public static Function GetFunction(int index)
+    public static Function GetFunction(FunctionName name)
     {
-        return functions[index];
+        return functions[(int)name];
     }
 
     public static float Wave(float x, float t)
