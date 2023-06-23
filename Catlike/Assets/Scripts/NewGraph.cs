@@ -14,7 +14,7 @@ public class NewGraph : MonoBehaviour
     FunctionLibrary.FunctionName function;
 
     [SerializeField, Min(0f)]
-    float functionDuration = 1f, transitionDuration = 1f;
+    float functionDuration = 3f, transitionDuration = 2f;
 
     public enum TransitionMode { Cycle, Random }
 
