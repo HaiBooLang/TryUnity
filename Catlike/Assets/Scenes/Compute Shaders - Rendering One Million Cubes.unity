@@ -275,6 +275,7 @@ MonoBehaviour:
   functionDuration: 1
   transitionDuration: 0
   transitionMode: 0
+  computeShader: {fileID: 7200000, guid: b760f0245f01d464791011e8531c738a, type: 3}
 --- !u!1 &692928627
 GameObject:
   m_ObjectHideFlags: 0
