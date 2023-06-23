@@ -16,6 +16,11 @@ public class NewGraph : MonoBehaviour
     [SerializeField, Min(0f)]
     float functionDuration = 1f;
 
+    public enum TransitionMode { Cycle, Random }
+
+    [SerializeField]
+    TransitionMode transitionMode;
+
     Transform[] points;
 
     float duration;
@@ -41,10 +46,17 @@ public class NewGraph : MonoBehaviour
         if (duration >= functionDuration)
         {
             duration -= functionDuration;
-            function = FunctionLibrary.GetNextFunctionName(function);
+            PickNextFunction();
         }
 
         UpdateFunction();
+    }
+
+    void PickNextFunction()
+    {
+        function = transitionMode == TransitionMode.Cycle ?
+            FunctionLibrary.GetNextFunctionName(function) :
+            FunctionLibrary.GetRandomFunctionNameOtherThan(function);
     }
 
     void UpdateFunction()
