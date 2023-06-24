@@ -1,4 +1,5 @@
 #pragma kernel FunctionKernel
+#define PI 3.14159265358979323846
 
 RWStructuredBuffer<float3> _Positions;
 
@@ -18,8 +19,6 @@ void SetPosition(uint3 id, float3 position)
         _Positions[id.x + id.y * _Resolution] = position;
     }
 }
-
-#define PI 3.14159265358979323846
 
 float3 Wave(float u, float v, float t)
 {

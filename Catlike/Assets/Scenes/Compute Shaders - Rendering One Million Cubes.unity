@@ -270,12 +270,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617f5bdf3bbeb5a498a1b2fa094b009b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 10
+  resolution: 505
   function: 0
   functionDuration: 1
   transitionDuration: 0
   transitionMode: 0
   computeShader: {fileID: 7200000, guid: b760f0245f01d464791011e8531c738a, type: 3}
+  material: {fileID: 2100000, guid: 56d7de0e2bcade44296f91f6c914cd42, type: 2}
+  mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &692928627
 GameObject:
   m_ObjectHideFlags: 0

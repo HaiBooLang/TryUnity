@@ -7,7 +7,6 @@ Shader"Graph/Point Surface GPU" {
 	SubShader {
 		CGPROGRAM
 		#pragma surface ConfigureSurface Standard fullforwardshadows addshadow
-		#pragma target 4.5
 		#pragma instancing_options assumeuniformscaling procedural:ConfigureProcedural
 
 		struct Input

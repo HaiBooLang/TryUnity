@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class GPUGraph : MonoBehaviour
 {
-    [SerializeField, Range(10, 100)]
+    [SerializeField, Range(10, 1000)]
     int resolution = 10;
 
     [SerializeField]
@@ -41,6 +41,7 @@ public class GPUGraph : MonoBehaviour
         computeShader.SetBuffer(0, positionsId, positionsBuffer);
         int groups = Mathf.CeilToInt(resolution / 8f);
         computeShader.Dispatch(0, groups, groups, 1);
+
         material.SetBuffer(positionsId, positionsBuffer);
         material.SetFloat(stepId, step);
         
