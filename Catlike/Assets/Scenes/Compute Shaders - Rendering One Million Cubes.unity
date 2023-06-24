@@ -276,7 +276,7 @@ MonoBehaviour:
   transitionDuration: 0
   transitionMode: 0
   computeShader: {fileID: 7200000, guid: b760f0245f01d464791011e8531c738a, type: 3}
-  material: {fileID: 2100000, guid: 56d7de0e2bcade44296f91f6c914cd42, type: 2}
+  material: {fileID: 2100000, guid: 0c112e84771667544957a158d834f1b7, type: 2}
   mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &692928627
 GameObject:
