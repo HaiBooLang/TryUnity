@@ -272,8 +272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolution: 1000
   function: 0
-  functionDuration: 1
-  transitionDuration: 0
+  functionDuration: 3
+  transitionDuration: 2
   transitionMode: 0
   computeShader: {fileID: 7200000, guid: b760f0245f01d464791011e8531c738a, type: 3}
   material: {fileID: 2100000, guid: 0c112e84771667544957a158d834f1b7, type: 2}
