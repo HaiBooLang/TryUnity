@@ -272,7 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolution: 1000
   function: 0
-  functionDuration: 3
+  functionDuration: 6
   transitionDuration: 2
   transitionMode: 1
   computeShader: {fileID: 7200000, guid: b760f0245f01d464791011e8531c738a, type: 3}
