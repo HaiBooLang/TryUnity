@@ -3,8 +3,11 @@ using UnityEngine.UIElements;
 
 public class GPUGraph : MonoBehaviour
 {
-    [SerializeField, Range(10, 1000)]
-    int resolution = 10;
+    const int maxResolution = 1000;
+    const int mimResolution = 10;
+
+    [SerializeField, Range(mimResolution, maxResolution)]
+    int resolution = mimResolution;
 
     [SerializeField]
     FunctionLibrary.FunctionName function;
@@ -47,7 +50,7 @@ public class GPUGraph : MonoBehaviour
         
         var bounds = new Bounds(Vector3.zero, Vector3.one * (2f + 2f / resolution));
         Graphics.DrawMeshInstancedProcedural(
-            mesh, 0, material, bounds, positionsBuffer.count
+            mesh, 0, material, bounds, resolution * resolution
         );
     }
 
@@ -61,7 +64,7 @@ public class GPUGraph : MonoBehaviour
 
     void OnEnable()
     {
-        positionsBuffer = new ComputeBuffer(resolution * resolution, 3 * 4);
+        positionsBuffer = new ComputeBuffer(maxResolution * maxResolution, 3 * 4);
     }
 
     void OnDisable()
