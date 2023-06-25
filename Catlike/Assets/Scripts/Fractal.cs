@@ -1,7 +1,16 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Fractal : MonoBehaviour
 {
+    struct FractalPart
+    {
+        public Vector3 direction;
+        public Quaternion rotation;
+        public Transform transform;
+    }
+
+    FractalPart[][] parts;
 
     [SerializeField, Range(1, 8)]
     int depth = 4;
@@ -32,6 +41,13 @@ public class Fractal : MonoBehaviour
 
     void Awake()
     {
+        parts = new FractalPart[depth][];
+        parts[0] = new FractalPart[1];
+        for (int i = 0, length = 1; i < parts.Length; i++, length *= 5)
+        {
+            parts[i] = new FractalPart[length];
+        }
+
         CreatePart();
     }
 }
