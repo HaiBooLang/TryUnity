@@ -14,10 +14,19 @@ public class Fractal : MonoBehaviour
             return;
         }
 
+        Fractal childA = CreateChild(Vector3.up);
+        Fractal childB = CreateChild(Vector3.right);
+
+        childA.transform.SetParent(transform, false);
+        childB.transform.SetParent(transform, false);
+    }
+
+    Fractal CreateChild(Vector3 direction)
+    {
         Fractal child = Instantiate(this);
         child.depth = depth - 1;
-        child.transform.SetParent(transform, false);
-        child.transform.localPosition = 0.75f * Vector3.right;
+        child.transform.localPosition = 0.75f * direction;
         child.transform.localScale = 0.5f * Vector3.one;
+        return child;
     }
 }
