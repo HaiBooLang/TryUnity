@@ -16,9 +16,15 @@ public class Fractal : MonoBehaviour
 
         Fractal childA = CreateChild(Vector3.up, Quaternion.identity);
         Fractal childB = CreateChild(Vector3.right, Quaternion.Euler(0f, 0f, -90f));
+        Fractal childC = CreateChild(Vector3.left, Quaternion.Euler(0f, 0f, 90f));
+        Fractal childD = CreateChild(Vector3.forward, Quaternion.Euler(90f, 0f, 0f));
+        Fractal childE = CreateChild(Vector3.back, Quaternion.Euler(-90f, 0f, 0f));
 
         childA.transform.SetParent(transform, false);
         childB.transform.SetParent(transform, false);
+        childC.transform.SetParent(transform, false);
+        childD.transform.SetParent(transform, false);
+        childE.transform.SetParent(transform, false);
     }
 
     Fractal CreateChild(Vector3 direction, Quaternion rotation)
