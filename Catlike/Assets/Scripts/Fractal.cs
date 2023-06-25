@@ -21,4 +21,17 @@ public class Fractal : MonoBehaviour
         Quaternion.Euler(0f, 0f, -90f), Quaternion.Euler(0f, 0f, 90f),
         Quaternion.Euler(90f, 0f, 0f), Quaternion.Euler(-90f, 0f, 0f)
     };
+
+    void CreatePart()
+    {
+        var go = new GameObject("Fractal Part");
+        go.transform.SetParent(transform, false);
+        go.AddComponent<MeshFilter>().mesh = mesh;
+        go.AddComponent<MeshRenderer>().material = material;
+    }
+
+    void Awake()
+    {
+        CreatePart();
+    }
 }
