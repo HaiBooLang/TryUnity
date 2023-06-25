@@ -27,6 +27,11 @@ public class Fractal : MonoBehaviour
         childE.transform.SetParent(transform, false);
     }
 
+    void Update()
+    {
+        transform.Rotate(0f, 22.5f * Time.deltaTime, 0f);
+    }
+
     Fractal CreateChild(Vector3 direction, Quaternion rotation)
     {
         Fractal child = Instantiate(this);
