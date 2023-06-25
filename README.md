@@ -14,26 +14,21 @@
 
 ![image-20230623113527449](./image/image-20230623113527449.png)
 
-![image-20230623152347011](./image/image-20230623152347011.png)
+<div>
+  <img src="./image/image-20230623152347011.png" alt="Image 1" style="width:20%;">
+  <img src="./image/image-20230623152412098.png" alt="Image 2" style="width:20%;">
+  <img src="./image/image-20230623152436928.png" alt="Image 3" style="width:20%;">
+  <img src="./image/image-20230623152456296.png" alt="Image 4" style="width:20%;">
+  <img src="./image/image-20230623152512449.png" alt="Image 5" style="width:20%;">
+</div>
 
-![image-20230623152412098](./image/image-20230623152412098.png)
-
-![image-20230623152436928](./image/image-20230623152436928.png)
-
-![image-20230623152456296](./image/image-20230623152456296.png)
-
-![image-20230623152512449](./image/image-20230623152512449.png)
-
-![image-20230624230943947](./image/image-20230624230943947.png)
-
-![image-20230624230957997](./image/image-20230624230957997.png)
-
-![image-20230624231007705](./image/image-20230624231007705.png)
-
-![image-20230624231018555](./image/image-20230624231018555.png)
-
-![image-20230624231053414](./image/image-20230624231053414.png)
-
+<div>
+  <img src="./image/image-20230624230943947.png" alt="Image 1" style="width:20%;">
+  <img src="./image/image-20230624230957997.png" alt="Image 2" style="width:20%;">
+  <img src="./image/image-20230624231007705.png" alt="Image 3" style="width:20%;">
+  <img src="./image/image-20230624231018555.png" alt="Image 4" style="width:20%;">
+  <img src="./image/image-20230624231053414.png" alt="Image 5" style="width:20%;">
+</div>
 ## 学习资源
 
 - [Catlike]([Unity C# and Shader Tutorials (catlikecoding.com)](https://catlikecoding.com/unity/tutorials/))
