@@ -2,17 +2,16 @@
 
 学学 Unity，做个小游戏，顺便应用下图形学所学知识
 
-![image-20230622220734181](./image/image-20230622220734181.png)
+<div>
+  <img src="./image/image-20230622220734181.png" alt="Image 1" style="width:32%;">
+  <img src="./image/image-20230622220845014.png" alt="Image 2" style="width:32%;">
+  <img src="./image/image-20230622220929741.png" alt="Image 3" style="width:32%;">
+</div>
 
-![image-20230622220845014](./image/image-20230622220845014.png)
-
-![image-20230622220929741](./image/image-20230622220929741.png)
-
-
-
-![image-20230623001145405](./image/image-20230623001145405.png)
-
-![image-20230623113527449](./image/image-20230623113527449.png)
+<div>
+  <img src="./image/image-20230623001145405.png" alt="Image 1" style="width:49%;">
+  <img src="./image/image-20230623113527449.png" alt="Image 2" style="width:49%;">
+</div>
 
 <div>
   <img src="./image/image-20230623152347011.png" alt="Image 1" style="width:19%;">
